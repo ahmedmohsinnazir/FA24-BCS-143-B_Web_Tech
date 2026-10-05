@@ -880,3 +880,32 @@ footer{
   margin-bottom: 50px;
   font-size: 16px;
 }
+
+#buttons-before-eqt{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#training-wear-button{
+  color: rgb(147, 4, 12);
+  background-color: transparent;
+  border-style: none;
+  font-weight: 550 ;
+  font-size: 13px;
+}
+
+#eqt-button{
+  color: black;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(189, 189, 189);
+  padding: 10px;
+  padding-left: 13.5px;
+  padding-right: 13.5px;
+  border-radius: 99px;
+  
+  font-weight: 550 ;
+  font-size: 13px;
+}
