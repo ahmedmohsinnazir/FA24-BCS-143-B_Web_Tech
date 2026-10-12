@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -6,9 +6,11 @@ body {
   margin: 0px;
   overflow-x: hidden;
 }
-header{
+
+header {
   z-index: 100;
   position: relative;
+  
 }
 
 #header {
@@ -92,7 +94,7 @@ nav {
   left: 25px;
 }
 
-.nav-icons{
+.nav-icons {
   width: 24px;
   position: relative;
   left: 80px;
@@ -100,50 +102,49 @@ nav {
   margin-right: 8px;
 }
 
-@media(max-width: 768px) {
-  #currency {
-    display: none;
-  }
-
-  .nav-link {
-    display: none;
-  }
-
-
-
+#hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
+
 
 #hero {
   position: relative;
-  z-index: 0  ;
+  z-index: 0;
   margin-top: -8em;
 }
 
 #hero-img {
   width: 100%;
   display: block;
- 
+
 }
 
-#hero-text{
+#hero-text {
   position: absolute;
   transform: translateY(-5em);
   color: white;
   text-align: center;
-  @media(min-width: 768px){
+
+  @media(min-width: 768px) {
     font-size: 3.0em;
     padding-left: 1.2em;
     transform: translateY(-6em);
   }
+
   font-weight: 600;
-  font-family: "Michroma", sans-serif;
+  font-family: "Michroma",
+  sans-serif;
 }
 
-#shop-now{
-  position: absolute  ;
+#shop-now {
+  position: absolute;
   transform: translate(53px, -150px);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding: 12px;
   padding-left: 22px;
   padding-right: 22px;
@@ -157,37 +158,37 @@ nav {
   cursor: pointer;
 }
 
-#shop-now:hover{
+#shop-now:hover {
   background-color: rgb(227, 6, 19);
 }
 
-#hero-bottom{
+#hero-bottom {
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
   color: black;
   background-color: rgb(225, 225, 225);
-  
+
   transform: translateY(-2.8em);
 }
 
-.hero-bottom-text{
+.hero-bottom-text {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 0.9em;
   margin-right: 22px;
   margin-left: 10px;
 }
 
-#EQT{
+#EQT {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin-bottom: 0px;
 }
 
-#supporters-also-viewed{
+#supporters-also-viewed {
   display: flex;
   margin-top: 30px;
   justify-content: center;
@@ -196,28 +197,28 @@ nav {
 }
 
 
-#adidas-cards{
+#adidas-cards {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin-bottom: 0px;
 }
 
-#category-cards{
+#category-cards {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin-bottom: 0px;
 }
 
-#player-cards{
+#player-cards {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin-bottom: 0px;
 }
 
-.EQT-card{
+.EQT-card {
   width: 300px;
   height: 600px;
   overflow: hidden;
@@ -225,7 +226,7 @@ nav {
   z-index: -9999;
 }
 
-.product-product-card{
+.product-product-card {
   width: 300px;
   height: 600px;
   overflow: hidden;
@@ -233,7 +234,7 @@ nav {
   z-index: -9999;
 }
 
-.adidas-card{
+.adidas-card {
   width: 300px;
   height: 600px;
   overflow: hidden;
@@ -241,7 +242,7 @@ nav {
   z-index: -9999;
 }
 
-.category-card{
+.category-card {
   width: 300px;
   height: 600px;
   overflow: hidden;
@@ -249,7 +250,7 @@ nav {
   z-index: -9999;
 }
 
-.player-card{
+.player-card {
   width: 300px;
   height: 600px;
   overflow: hidden;
@@ -257,7 +258,7 @@ nav {
   z-index: -9999;
 }
 
-.eqt-img{
+.eqt-img {
   border-radius: 7px;
   width: 100%;
   height: 60%;
@@ -267,7 +268,7 @@ nav {
   z-index: -9999;
 }
 
-.product-product-img{
+.product-product-img {
   border-radius: 7px;
   width: 100%;
   height: 60%;
@@ -277,7 +278,7 @@ nav {
   z-index: -9999;
 }
 
-.adidas-img{
+.adidas-img {
   border-radius: 7px;
   width: 100%;
   height: 60%;
@@ -287,7 +288,7 @@ nav {
   z-index: -9999;
 }
 
-.category-img{
+.category-img {
   border-radius: 7px;
   width: 100%;
   height: 60%;
@@ -297,7 +298,7 @@ nav {
   z-index: -9999;
 }
 
-.player-img{
+.player-img {
   border-radius: 7px;
   width: 100%;
   height: 60%;
@@ -309,61 +310,61 @@ nav {
 
 
 
-.eqt-title{
+.eqt-title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   padding-bottom: 0px;
-   margin-bottom: -11px;
-   margin-top: -12px;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-bottom: 0px;
+  margin-bottom: -11px;
+  margin-top: -12px;
 }
 
-.product-title{
+.product-title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   padding-bottom: 0px;
-   margin-bottom: -11px;
-   margin-top: -12px;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-bottom: 0px;
+  margin-bottom: -11px;
+  margin-top: -12px;
 }
 
-.adidas-card-title{
+.adidas-card-title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   padding-bottom: 0px;
-   margin-bottom: -11px;
-   margin-top: 6px;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-bottom: 0px;
+  margin-bottom: -11px;
+  margin-top: 6px;
 }
 
-.category-card-title{
+.category-card-title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   padding-bottom: 0px;
-   margin-bottom: -11px;
-   margin-top: 6px;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-bottom: 0px;
+  margin-bottom: -11px;
+  margin-top: 6px;
 }
 
-.player-card-title{
+.player-card-title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   padding-bottom: 0px;
-   margin-bottom: -11px;
-   margin-top: 6px;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-bottom: 0px;
+  margin-bottom: -11px;
+  margin-top: 6px;
 }
 
-.eqt-price{
+.eqt-price {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 700;
   padding-top: 0px;
 }
 
-.product-price{
+.product-price {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 700;
   padding-top: 0px;
 }
 
-.add-eqt{
+.add-eqt {
   color: white;
   background-color: rgb(147, 4, 12);
   border-style: none;
@@ -377,32 +378,32 @@ nav {
   transform: translate(260px, -40px);
 }
 
-.add-eqt:hover{
+.add-eqt:hover {
   background-color: rgb(227, 6, 19);
 }
 
-#buttons-before-eqt{
+#buttons-before-eqt {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-#product-viewed-buttons{
+#product-viewed-buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 30px;
 }
 
-#recently-button{
+#recently-button {
   color: rgb(147, 4, 12);
   background-color: transparent;
   border-style: none;
-  font-weight: 550 ;
+  font-weight: 550;
   font-size: 13px;
 }
 
-#supporters-button{
+#supporters-button {
   color: black;
   background-color: transparent;
   border-style: solid;
@@ -412,16 +413,16 @@ nav {
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 99px;
-  
-  font-weight: 550 ;
+
+  font-weight: 550;
   font-size: 13px;
 }
 
-.hero-bottom-icons{
+.hero-bottom-icons {
   width: 15px;
 }
 
-.hero-bottom-icons1{
+.hero-bottom-icons1 {
   width: 35px;
 }
 
@@ -436,15 +437,15 @@ nav {
   white-space: nowrap;
 
   width: 130px;
-  margin-right: -150px;       
-  transform: translate(380px);  
+  margin-right: -150px;
+  transform: translate(380px);
 }
 
-#view-eqt-button:hover{
+#view-eqt-button:hover {
   background-color: rgb(227, 6, 19);
 }
 
-#adidas-title{
+#adidas-title {
   font-weight: 600;
   font-family: "Michroma", sans-serif;
   font-size: 32px;
@@ -453,7 +454,7 @@ nav {
   margin-left: 50px;
 }
 
-#category-title{
+#category-title {
   font-weight: 600;
   font-family: "Michroma", sans-serif;
   font-size: 32px;
@@ -462,7 +463,7 @@ nav {
   margin-left: 50px;
 }
 
-#player-title{
+#player-title {
   font-weight: 600;
   font-family: "Michroma", sans-serif;
   font-size: 32px;
@@ -471,53 +472,53 @@ nav {
   margin-left: 50px;
 }
 
-#adidas-collections{
+#adidas-collections {
   margin-top: -50px;
 }
 
-#categories{
+#categories {
   margin-top: -120px;
 }
 
-#by-player{
+#by-player {
   margin-top: -120px;
 }
 
-#features{
+#features {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-bottom: 50px;
 }
 
-.feature{
+.feature {
   background-color: rgb(245, 245, 245);
   width: 400px;
   margin-top: -50px;
   height: 220px;
 }
 
-.feature-icon{
+.feature-icon {
   width: 120px;
   margin-left: 140px;
   margin-top: 35px;
 }
 
-.feature-icon2{
+.feature-icon2 {
   width: 50px;
   margin-left: 175px;
   margin-top: 35px;
 }
 
-.feature-icon3{
+.feature-icon3 {
   width: 50px;
   margin-left: 175px;
   margin-top: 35px;
 }
 
-.feature-title{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
-  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.feature-title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
   font-size: 25px;
   font-weight: 600;
@@ -525,16 +526,16 @@ nav {
   margin-top: 15px;
 }
 
-.feature-desc{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
-  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.feature-desc {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
   font-weight: 500;
   font-size: 14px;
   margin-top: -10px;
 }
 
-footer{
+footer {
   display: flex;
   background-color: black;
   width: 100%;
@@ -545,46 +546,46 @@ footer{
   gap: 20px;
 }
 
-#footer-logo{
+#footer-logo {
   width: 130px;
   margin-top: 50px;
   margin-left: 50px;
 }
 
-.footer-text{
+.footer-text {
   color: white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#footer-top-categories{
+#footer-top-categories {
   margin-left: 100px;
   margin-top: 40px;
 }
 
-#footer-help-centre{
+#footer-help-centre {
   margin-left: 70px;
   margin-top: 40px;
 }
 
-#footer-stadium-tours{
+#footer-stadium-tours {
   margin-left: 70px;
   margin-top: 40px;
 }
 
 
-#payment-methods{
+#payment-methods {
   margin-left: 70px;
   margin-top: 40px;
 }
 
-.payment-img{
+.payment-img {
   width: 60px;
   display: block;
   margin-bottom: 10px;
 }
 
-#footer-extension{
+#footer-extension {
   background-color: black;
   margin-top: -17px;
   width: 100%;
@@ -592,17 +593,17 @@ footer{
 }
 
 
-#header-bottom-bottom{
+#header-bottom-bottom {
   display: flex;
   justify-content: center;
   padding: 10px;
   border-bottom-style: solid;
   border-width: 1px;
   border-color: rgb(213, 210, 210);
-  
+
 }
 
-#header-bb-nav{
+#header-bb-nav {
   font-family: "Michroma", sans-serif;
   font-weight: 700;
   text-align: left;
@@ -630,25 +631,26 @@ footer{
   }
 }
 
-#product-details{
+
+#product-details {
   display: flex;
   justify-content: center;
 }
 
-#pd-img1{
+#pd-img1 {
   width: 800px;
   border-radius: 8px;
 }
 
-#pd-image1{
+#pd-image1 {
   width: 1000px;
   margin-left: 0px;
   margin-top: 10px;
 }
 
-#popular-heading{
+#popular-heading {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: rgb(147, 4, 12);
   font-size: 12px;
   font-weight: 500;
@@ -657,9 +659,9 @@ footer{
 }
 
 
-#pd-title{
+#pd-title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: black;
   font-size: 20px;
   font-weight: 400;
@@ -668,9 +670,9 @@ footer{
 }
 
 
-#pd-price{
+#pd-price {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: black;
   font-size: 20px;
   font-weight: 600;
@@ -678,42 +680,42 @@ footer{
   margin-left: -160px;
 }
 
-#pd-rating{
+#pd-rating {
   display: flex;
   margin-left: -160px;
   margin-top: -10px;
 }
 
-#star-rating{
+#star-rating {
   width: 20px;
 }
 
-#reviews{
+#reviews {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: black;
   font-size: 12px;
   text-decoration: underline;
-  font-weight: 300; 
+  font-weight: 300;
   margin-left: 10px;
 }
 
-#sizing{
+#sizing {
   margin-left: -170px;
 }
 
-#size-title{
+#size-title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: black;
   font-size: 14px;
-  font-weight: 560; 
+  font-weight: 560;
   margin-left: 10px;
   padding-top: 25px;
   text-align: left;
 }
 
-#size-chart{
+#size-chart {
   display: flex;
   margin-left: 10px;
   flex-wrap: wrap;
@@ -722,7 +724,7 @@ footer{
   gap: 10px;
 }
 
-.size-button{
+.size-button {
   background-color: rgb(236, 239, 241);
   border-style: none;
   padding: 12px;
@@ -730,31 +732,31 @@ footer{
   color: black;
   font-weight: 600;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'
-  , Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    , Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding-left: 40px;
   padding-right: 40px;
-  width: 100px; 
+  width: 100px;
 }
 
-.size-button:hover{
+.size-button:hover {
   background-color: black;
   color: white;
 }
 
-#size-guide-row{
+#size-guide-row {
   display: flex;
   margin-left: -160px;
   margin-top: -10px;
 }
 
-#pd-final-buttons{
+#pd-final-buttons {
   display: flex;
   margin-top: 20px;
   gap: 10px;
   margin-left: -160px;
 }
 
-#wishlist{
+#wishlist {
   border-radius: 88888px;
   background-color: rgb(236, 239, 241);
   border-style: none;
@@ -762,14 +764,14 @@ footer{
   padding-left: 25px;
   padding-right: 25px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'
-  , Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    , Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#wishlist:hover{
+#wishlist:hover {
   background-color: rgb(225, 225, 225);
 }
 
-#select-size{
+#select-size {
   border-radius: 88888px;
   background-color: rgb(147, 4, 12);
   border-style: none;
@@ -778,21 +780,21 @@ footer{
   color: white;
   padding-right: 25px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'
-  , Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    , Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#select-size:hover{
+#select-size:hover {
   background-color: rgb(227, 6, 19);
 }
 
-#ad{
+#ad {
   width: 320px;
   margin-left: -160px;
   margin-top: 20px;
   margin-bottom: 8px;
 }
 
-.pd-further-info{
+.pd-further-info {
   display: flex;
   margin-top: 20px;
   border-top-style: solid;
@@ -804,7 +806,7 @@ footer{
 
 }
 
-.pd-info-text{
+.pd-info-text {
   font-family: "Michroma", sans-serif;
   color: black;
   font-size: 14px;
@@ -815,38 +817,38 @@ footer{
 }
 
 
-#pd-expand{
+#pd-expand {
   width: 22px;
   position: relative;
   right: -148px;
   flex-shrink: 0;
 }
 
-#pd-expand2{
+#pd-expand2 {
   width: 22px;
   position: relative;
   right: -128px;
   flex-shrink: 0;
 }
 
-#pd-expand3{
+#pd-expand3 {
   width: 22px;
   position: relative;
   right: -125px;
   flex-shrink: 0;
 }
 
-#reviews-qs{
+#reviews-qs {
   display: flex;
   margin-left: 50px;
 }
 
-#reviews-button{
+#reviews-button {
   border-style: none;
   background-color: black;
   color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 
-  Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding: 12px;
   padding-left: 10px;
   padding-right: 350px;
@@ -856,12 +858,12 @@ footer{
   font-weight: 500;
 }
 
-#qs-button{
+#qs-button {
   border-style: none;
   background-color: rgb(246, 246, 246);
   color: black;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 
-  Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding: 12px;
   padding-left: 10px;
   padding-right: 350px;
@@ -871,9 +873,9 @@ footer{
   font-weight: 500;
 }
 
-#review-text{
+#review-text {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-   Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-left: 300px;
   margin-top: 50px;
   font-weight: 400;
@@ -881,21 +883,21 @@ footer{
   font-size: 16px;
 }
 
-#buttons-before-eqt{
+#buttons-before-eqt {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-#training-wear-button{
+#training-wear-button {
   color: rgb(147, 4, 12);
   background-color: transparent;
   border-style: none;
-  font-weight: 550 ;
+  font-weight: 550;
   font-size: 13px;
 }
 
-#eqt-button{
+#eqt-button {
   color: black;
   background-color: transparent;
   border-style: solid;
@@ -905,7 +907,320 @@ footer{
   padding-left: 13.5px;
   padding-right: 13.5px;
   border-radius: 99px;
-  
-  font-weight: 550 ;
+
+  font-weight: 550;
   font-size: 13px;
+}
+
+#view-eqt-row {
+  display: none;
+}
+
+@media(max-width: 767px) {
+
+  #currency {
+    display: none;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  #header-bottom,
+  #header-bottom-product {
+    position: relative;
+    width: 100%;
+    height: 62px;
+    padding: 0 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #product-viewed-buttons {
+    margin-top: 60px;
+  }
+
+
+  nav {
+    display: contents;
+  }
+
+  #hamburger {
+    display: flex;
+    margin-right: 14px;
+  }
+
+  #hamburger svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .nav-icons {
+    order: 3;
+    left: 0;
+    width: 24px;
+    margin: 0 0 0 14px;
+  }
+
+  .nav-icons:nth-of-type(2) {
+    order: 2;
+    margin: 0 auto 0 0;
+  }
+
+  #arsenal-cannon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 5em;
+  }
+
+  #header-bottom-bottom {
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  #header-bb-nav {
+    margin-left: 0;
+    font-size: 9px;
+  }
+
+  #hero {
+    margin-top: -62px;
+  }
+
+  #hero-img {
+    height: 420px;
+    object-fit: cover;
+    object-position: -2em;
+  }
+
+  #hero-text {
+    position: absolute;
+    left: 19px;
+    top: 300px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    font-size: 1.4em;
+    text-align: left;
+    transform: none;
+  }
+
+  #shop-now {
+    left: 16px;
+    top: 350px;
+    transform: none;
+  }
+
+  #hero-bottom {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0px 12px;
+    transform: none;
+  }
+
+  .hero-bottom-text {
+    white-space: nowrap;
+    margin-right: 24px;
+  }
+
+  .hero-bottom-icons,
+  .hero-bottom-icons1 {}
+
+  #buttons-before-eqt {
+    margin-top: 35px;
+    gap: 8px;
+  }
+
+  #view-eqt-button {
+    display: none;
+  }
+
+  #view-eqt-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  #view-eqt-button-mobile {
+    color: white;
+    border-style: none;
+    background-color: rgb(147, 4, 12);
+    padding: 10px 20px;
+    border-radius: 99px;
+    font-weight: 500;
+    font-size: 13px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  #view-eqt-button-mobile:hover {
+    background-color: rgb(227, 6, 19);
+  }
+
+  #EQT,#supporters-also-viewed,
+  #adidas-cards,#category-cards,
+  #player-cards {
+    justify-content: flex-start;
+    overflow-x: scroll;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .EQT-card,
+  .product-product-card,
+  .adidas-card,
+  .category-card,
+  .player-card {
+    flex: 0 0 calc(50% - 8px);
+    width: auto;
+    height: 320px;
+  }
+
+  .eqt-title, .product-title, .adidas-card-title,
+  .category-card-title, .player-card-title, .eqt-price,
+  .product-price {
+    font-size: 14px;
+  }
+
+  .add-eqt {
+    display: block;
+    margin-left: 130px;
+    transform: translate(-8px, -34px);
+  }
+
+  #adidas-title,
+  #category-title,
+  #player-title {
+    font-size: 18px;
+    margin-left: 16px;
+    margin-bottom: 20px;
+  }
+
+  #adidas-collections,
+  #categories,
+  #by-player {
+    margin-top: 60px;
+  }
+
+  #features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    width: 90%;
+    height: auto;
+    margin-top: 0;
+    padding-bottom: 10px;
+  }
+
+  .feature-icon,.feature-icon2,.feature-icon3 {
+    display: block;
+    margin: 30px auto 0 auto;
+  }
+
+  .feature-title {
+    font-size: 20px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 0;
+    padding-bottom: 20px;
+  }
+
+  #footer-image {
+    width: 100%;
+  }
+
+  #footer-logo {
+    width: 100px;
+    margin: 25px 0 0 20px;
+  }
+
+  #footer-top-categories,#footer-help-centre,#footer-stadium-tours,
+  #payment-methods {
+    width: calc(50% - 20px);
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    margin: 8px 0;
+  }
+
+  #product-details {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  #pd-image1 {
+    width: 100%;
+  }
+
+  #pd-img1 {
+    width: 100%;
+  }
+
+  #popular-heading,#pd-title,
+  #pd-price,#pd-rating,#sizing,
+  #size-guide-row,#pd-final-buttons,#ad,
+  .pd-further-info {
+    margin-left: 0;
+  }
+
+  #size-title,#size-chart {
+    margin-left: 0;
+  }
+
+  #size-chart {
+    width: 100%;
+  }
+
+  .size-button {
+    width: 30%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #pd-final-buttons button {
+    flex: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 13px;
+  }
+
+  #ad {
+    width: 100%;
+  }
+
+  .pd-further-info {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #pd-expand,#pd-expand2,#pd-expand3 {
+    right: 0;
+  }
+
+  #reviews-qs {
+    margin-left: 0;
+  }
+
+  #reviews-button,
+  #qs-button {
+    flex: 1;
+    padding-right: 12px;
+    text-align: center;
+  }
+
+  #review-text {
+    margin: 30px 16px;
+    text-align: center;
+  }
 }
