@@ -7,6 +7,15 @@ body {
   overflow-x: hidden;
 }
 
+.nav-link:hover,
+.nav-link:focus {
+  color: white;
+}
+
+body { margin: 0px; overflow-x: hidden; line-height: normal; }
+p { margin-top: 1em; margin-bottom: 1em; }
+img { vertical-align: baseline; }
+
 header {
   z-index: 100;
   position: relative;
@@ -40,8 +49,8 @@ header {
 }
 
 .EQT-card a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 
@@ -187,9 +196,6 @@ nav {
 }
 
 #EQT {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
   margin-bottom: 0px;
 }
 
@@ -224,10 +230,16 @@ nav {
 }
 
 .EQT-card {
-  width: 300px;
+  width: 100%;
   height: 600px;
   overflow: hidden;
   position: relative;
+}
+
+.cards-wrap {
+  width: calc(100% - 100px);
+  max-width: 1220px;
+  margin: 0 auto;
 }
 
 .product-product-card {
@@ -1063,7 +1075,12 @@ footer {
     background-color: rgb(227, 6, 19);
   }
 
-  #EQT,#supporters-also-viewed,
+  .cards-wrap {
+    width: auto;
+    margin: 0 0 0 16px;
+  }
+
+  #supporters-also-viewed,
   #adidas-cards,#category-cards,
   #player-cards {
     justify-content: flex-start;
@@ -1089,9 +1106,11 @@ footer {
   }
 
   .add-eqt {
+  .add-eqt {
     display: block;
-    margin-left: 130px;
+    margin-left: auto;
     transform: translate(-8px, -34px);
+  }
   }
 
   #adidas-title,
