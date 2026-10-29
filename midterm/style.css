@@ -17,7 +17,7 @@ p { margin-top: 1em; margin-bottom: 1em; }
 img { vertical-align: baseline; }
 
 header {
-  z-index: 100;
+  z-index: 2000; /* Task 1: mega-menu must sit above the grid, hero and any sticky element */
   position: relative;
   
 }
@@ -61,6 +61,7 @@ header {
 }
 
 #header-bottom {
+  position: relative; /* Task 1: containing block for .mega-panel */
   display: flex;
   background-color: transparent;
   padding: 1.2em;
@@ -70,7 +71,7 @@ header {
   border-color: black;
 }
 
-@media(min-width: 768px) {
+@media(min-width: 643px) {
   #header-bottom:hover {
     background-color: rgb(227, 6, 19);
     border-top: 0.1em;
@@ -82,11 +83,6 @@ header {
 #arsenal-cannon {
   width: 5em;
   position: relative;
-  left: 50px;
-
-  @media(min-width: 768px) {
-    transform: translateX(-6.5em);
-  }
 }
 
 nav {
@@ -100,18 +96,16 @@ nav {
   text-decoration: none;
   color: white;
   font-family: "Michroma", sans-serif;
-  font-size: 0.9em;
+  font-size: var(--nav-fs, 0.9em); /* --nav-fs is set per width in the Task 1 section */
   font-weight: bolder;
-  padding-left: 0.7em;
-  padding-right: 0.7em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   position: relative;
-  left: 25px;
 }
 
 .nav-icons {
   width: 24px;
   position: relative;
-  left: 80px;
   margin-left: 8px;
   margin-right: 8px;
 }
@@ -628,6 +622,7 @@ footer {
 }
 
 #header-bottom-product {
+  position: relative; /* Task 1: containing block for .mega-panel */
   display: flex;
   background-color: transparent;
   padding: 1.2em;
@@ -638,7 +633,7 @@ footer {
   background-color: rgb(227, 6, 19);
 }
 
-@media(min-width: 768px) {
+@media(min-width: 643px) {
   #header-bottom-product:hover {
     background-color: rgb(227, 6, 19);
     border-top: 0.1em;
@@ -938,58 +933,18 @@ footer {
     display: none;
   }
 
-  .nav-link {
-    display: none;
-  }
 
-  #header-bottom,
-  #header-bottom-product {
-    position: relative;
-    width: 100%;
-    height: 62px;
-    padding: 0 1rem;
-    justify-content: center;
-    align-items: center;
-  }
 
   #product-viewed-buttons {
     margin-top: 60px;
   }
 
 
-  nav {
-    display: contents;
-  }
 
-  #hamburger {
-    display: flex;
-    margin-right: 14px;
-  }
 
-  #hamburger svg {
-    width: 26px;
-    height: 26px;
-  }
 
-  .nav-icons {
-    order: 3;
-    left: 0;
-    width: 24px;
-    margin: 0 0 0 14px;
-  }
 
-  .nav-icons:nth-of-type(2) {
-    order: 2;
-    margin: 0 auto 0 0;
-  }
 
-  #arsenal-cannon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 5em;
-  }
 
   #header-bottom-bottom {
     justify-content: flex-start;
@@ -1001,9 +956,6 @@ footer {
     font-size: 9px;
   }
 
-  #hero {
-    margin-top: -62px;
-  }
 
   #hero-img {
     height: 420px;
@@ -1246,4 +1198,229 @@ footer {
     margin: 30px 16px;
     text-align: center;
   }
+}
+
+/* =====================================================================
+   TASK 1 - NAVBAR + "SHOP BY CATEGORY" MEGA-MENU  (HTML + CSS only)
+   N = 43  ->  BP = 600 + 43 = 643px   |   K = (43 mod 3) + 3 = 4 columns
+   Three header layouts:
+     >= 1100px      one row (original look)
+     643 - 1099px   two rows: logo + icons, then the links
+     <= 642px       hamburger menu, mega-menu becomes a <details> accordion
+   ===================================================================== */
+
+/* ---------- shared defaults ---------- */
+.menu-toggle { display: none; }          /* only used below BP */
+.nav-menu { display: contents; }         /* links stay direct flex items of <nav>, as before */
+.mega-accordion { display: none; }       /* only used below BP */
+
+/* ---------- BP and wider: full-width panel ---------- */
+@media (min-width: 643px) {
+  .nav-link-stack { text-align: center; }
+
+  /* The item stretches the full height of the bar and 1.2rem further down, so the
+     pointer never leaves it on the way from the link to the panel. */
+  .mega-item {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--bar-pad);
+    margin-bottom: calc(-1 * var(--bar-pad));
+    /* NOT positioned on purpose: the panel is positioned against #header-bottom */
+  }
+
+  .mega-panel {
+    --mega-cols: 4;                      /* K */
+    position: absolute;                  /* out of flow: never pushes the page down */
+    top: 100%;                           /* directly under the navbar */
+    left: 0;
+    right: 0;                            /* full width */
+    display: grid;
+    grid-template-columns: repeat(var(--mega-cols), minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+    padding: 1.75rem max(1rem, calc((100% - 1220px) / 2)) 2rem;
+    background: #fff;
+    color: #111;
+    border-top: 3px solid rgb(147, 4, 12);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+    /* closed: invisible AND not focusable, so Tab skips it */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-4px);
+    /* closing is delayed by 0.25s ("hover intent") so a diagonal pointer path that briefly
+       touches a neighbouring link on the way to the panel does not close it */
+    transition: opacity 0.12s ease 0.25s, transform 0.12s ease 0.25s, visibility 0s linear 0.37s;
+  }
+
+  /* open on hover of the item (link OR panel) and on keyboard focus anywhere inside it */
+  .mega-item:hover .mega-panel,
+  .mega-item:focus-within .mega-panel {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s;                /* opening is instant */
+  }
+
+  .mega-heading {
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #d9d9d9;
+    font-family: "Michroma", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgb(147, 4, 12);
+  }
+
+  .mega-panel ul { list-style: none; margin: 0; padding: 0; }
+}
+
+@media (min-width: 643px) and (prefers-reduced-motion: reduce) {
+  .mega-panel { transition: none; transform: none; }
+}
+
+/* shared link look (panel + accordion) */
+.mega-link {
+  display: block;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #111;
+  text-decoration: none;
+}
+.mega-link:hover,
+.mega-link:focus-visible {
+  color: rgb(227, 6, 19);
+  text-decoration: underline;
+}
+
+/* ---------- >= 1100px: single row ---------- */
+@media (min-width: 1100px) {
+  :root { --nav-fs: clamp(0.5rem, 1.1vw, 0.9rem); --bar-pad: 1.2rem; }
+  #arsenal-cannon { margin-right: 2.5rem; }
+}
+
+/* ---------- 643px - 1099px: two rows (nine Michroma links do not fit in one) ---------- */
+@media (min-width: 643px) and (max-width: 1099px) {
+  :root { --nav-fs: clamp(0.5rem, calc((100vw - 3rem) / 64), 0.9rem); --bar-pad: 0.6rem; }
+
+  #header-bottom,
+  #header-bottom-product {
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 0.4rem;
+    padding: 0.6rem 1rem;
+  }
+  nav { display: contents; }                       /* logo, icons and links share the bar */
+  #arsenal-cannon { width: 3.5em; margin-right: auto; }
+  .nav-icons { order: 2; }                         /* row 1, right */
+  .nav-menu {                                      /* row 2: the links */
+    order: 3;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* ---------- below BP (<= 642px): hamburger menu + accordion ---------- */
+@media (max-width: 642px) {
+  #hero { margin-top: -62px; }
+
+  #header-bottom,
+  #header-bottom-product {
+    position: relative;
+    width: 100%;
+    height: 62px;
+    padding: 0 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav { display: contents; }
+
+  #hamburger { display: flex; margin-right: 14px; }
+  #hamburger svg { width: 26px; height: 26px; }
+
+  .nav-icons { order: 3; left: 0; width: 24px; margin: 0 0 0 14px; }
+  .nav-icons:nth-of-type(2) { order: 2; margin: 0 auto 0 0; }
+
+  #arsenal-cannon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 5em;
+  }
+
+  /* the checkbox is visually hidden but still reachable with Tab / Space */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+  }
+  .menu-toggle:focus-visible + #hamburger { outline: 2px solid #fff; outline-offset: 4px; }
+
+  /* the collapsed menu: closed by default, opened by the checked checkbox */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    background: rgb(3, 3, 37);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .menu-toggle:checked ~ nav .nav-menu { display: flex; }
+
+  .nav-link,
+  .mega-acc-title {
+    display: block;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.8rem;
+    text-align: left;
+  }
+  .nav-link br { display: none; }
+
+  /* "Shop by Category": the K groups as independent <details> */
+  .mega-trigger,
+  .mega-panel { display: none; }
+  .mega-accordion { display: block; }
+  .mega-acc-title {
+    margin: 0;
+    font-family: "Michroma", sans-serif;
+    font-weight: bolder;
+    color: #fff;
+  }
+  .mega-accordion details { border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  .mega-accordion summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px 12px 28px;
+    list-style: none;
+    cursor: pointer;
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .mega-accordion summary::-webkit-details-marker { display: none; }
+  .mega-accordion summary::after { content: "+"; font-size: 1.3rem; line-height: 1; }
+  .mega-accordion details[open] > summary::after { content: "\2212"; }
+  .mega-accordion ul { list-style: none; margin: 0; padding: 0 16px 12px 28px; }
+  .mega-accordion .mega-link { color: rgba(255, 255, 255, 0.85); padding: 0.45rem 0; }
+  .mega-accordion .mega-link:hover,
+  .mega-accordion .mega-link:focus-visible { color: #fff; }
 }

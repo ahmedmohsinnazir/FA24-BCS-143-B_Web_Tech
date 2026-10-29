@@ -24,21 +24,125 @@
       </div>
     </div>
     <div id="header-bottom-product">
+      <!-- CSS-only hamburger: the checkbox holds the open/closed state (no JavaScript) -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+      <label for="menu-toggle" id="hamburger">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </label>
       <img src="images/arsenal-cannon.svg" id="arsenal-cannon">
-      <nav>
-        <a href="#" class="nav-link" style="text-align: center;">NEW<br>IN</a>
-        <a href="#" class="nav-link">KIT</a>
-        <a href="#" class="nav-link">ADIDAS</a>
-        <a href="#" class="nav-link">CL0THING</a>
-        <a href="#" class="nav-link">ACCESSORIES</a>
-        <a href="#" class="nav-link">CHAMPIONS</a>
-        <a href="#" class="nav-link">GIFTS</a>
-        <a href="#" class="nav-link" style="text-align: center;">STADIUM<br>TOURS</a>
+      <nav aria-label="Main navigation">
+        <div class="nav-menu">
+          <!-- Task 1: "Shop by Category" mega-menu. Number of columns = K = 4 -->
+          <div class="mega-item">
+            <a href="#" class="nav-link nav-link-stack mega-trigger" aria-haspopup="true">SHOP BY <br>CATEGORY</a>
+
+            <!-- BP (643px) and wider: full-width panel, opens on :hover / :focus-within -->
+            <div class="mega-panel">
+            <div class="mega-col">
+              <h2 class="mega-heading">Kit</h2>
+              <ul>
+                <li><a href="#" class="mega-link">Home Kit</a></li>
+                <li><a href="#" class="mega-link">Away Kit</a></li>
+                <li><a href="#" class="mega-link">Third Kit</a></li>
+                <li><a href="#" class="mega-link">Goalkeeper Kit</a></li>
+                <li><a href="#" class="mega-link">Training Wear</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h2 class="mega-heading">Clothing</h2>
+              <ul>
+                <li><a href="#" class="mega-link">T-Shirts</a></li>
+                <li><a href="#" class="mega-link">Hoodies &amp; Sweatshirts</a></li>
+                <li><a href="#" class="mega-link">Jackets &amp; Coats</a></li>
+                <li><a href="#" class="mega-link">Polo Shirts</a></li>
+                <li><a href="#" class="mega-link">Shorts</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h2 class="mega-heading">Accessories</h2>
+              <ul>
+                <li><a href="#" class="mega-link">Scarves &amp; Hats</a></li>
+                <li><a href="#" class="mega-link">Bags &amp; Backpacks</a></li>
+                <li><a href="#" class="mega-link">Mugs &amp; Homeware</a></li>
+                <li><a href="#" class="mega-link">Phone Cases</a></li>
+                <li><a href="#" class="mega-link">Stationery</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h2 class="mega-heading">Shop For</h2>
+              <ul>
+                <li><a href="#" class="mega-link">Men</a></li>
+                <li><a href="#" class="mega-link">Women</a></li>
+                <li><a href="#" class="mega-link">Kids</a></li>
+                <li><a href="#" class="mega-link">Baby &amp; Toddler</a></li>
+                <li><a href="#" class="mega-link">Retro Shirts</a></li>
+              </ul>
+            </div>
+            </div>
+
+            <!-- Below BP: same groups as an accordion inside the hamburger menu -->
+            <div class="mega-accordion">
+              <p class="mega-acc-title">SHOP BY CATEGORY</p>
+            <details>
+              <summary>Kit</summary>
+              <ul>
+                <li><a href="#" class="mega-link">Home Kit</a></li>
+                <li><a href="#" class="mega-link">Away Kit</a></li>
+                <li><a href="#" class="mega-link">Third Kit</a></li>
+                <li><a href="#" class="mega-link">Goalkeeper Kit</a></li>
+                <li><a href="#" class="mega-link">Training Wear</a></li>
+              </ul>
+            </details>
+            <details>
+              <summary>Clothing</summary>
+              <ul>
+                <li><a href="#" class="mega-link">T-Shirts</a></li>
+                <li><a href="#" class="mega-link">Hoodies &amp; Sweatshirts</a></li>
+                <li><a href="#" class="mega-link">Jackets &amp; Coats</a></li>
+                <li><a href="#" class="mega-link">Polo Shirts</a></li>
+                <li><a href="#" class="mega-link">Shorts</a></li>
+              </ul>
+            </details>
+            <details>
+              <summary>Accessories</summary>
+              <ul>
+                <li><a href="#" class="mega-link">Scarves &amp; Hats</a></li>
+                <li><a href="#" class="mega-link">Bags &amp; Backpacks</a></li>
+                <li><a href="#" class="mega-link">Mugs &amp; Homeware</a></li>
+                <li><a href="#" class="mega-link">Phone Cases</a></li>
+                <li><a href="#" class="mega-link">Stationery</a></li>
+              </ul>
+            </details>
+            <details>
+              <summary>Shop For</summary>
+              <ul>
+                <li><a href="#" class="mega-link">Men</a></li>
+                <li><a href="#" class="mega-link">Women</a></li>
+                <li><a href="#" class="mega-link">Kids</a></li>
+                <li><a href="#" class="mega-link">Baby &amp; Toddler</a></li>
+                <li><a href="#" class="mega-link">Retro Shirts</a></li>
+              </ul>
+            </details>
+            </div>
+          </div>
+
+          <a href="#" class="nav-link nav-link-stack">NEW <br>IN</a>
+          <a href="#" class="nav-link">KIT</a>
+          <a href="#" class="nav-link">ADIDAS</a>
+          <a href="#" class="nav-link">CL0THING</a>
+          <a href="#" class="nav-link">ACCESSORIES</a>
+          <a href="#" class="nav-link">CHAMPIONS</a>
+          <a href="#" class="nav-link">GIFTS</a>
+          <a href="#" class="nav-link nav-link-stack">STADIUM <br>TOURS</a>
+        </div>
         <img class="nav-icons" src="images/user.svg">
         <img class="nav-icons" src="images/search.svg">
         <img class="nav-icons" src="images/heart.svg">
         <img class="nav-icons" src="images/cart.svg">
-
       </nav>
     </div>
 
