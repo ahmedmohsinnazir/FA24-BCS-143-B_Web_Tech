@@ -144,7 +144,20 @@
         <img class="nav-icons" src="images/user.svg">
         <img class="nav-icons" src="images/search.svg">
         <img class="nav-icons" src="images/heart.svg">
-        <a href="checkout.html" class="nav-cart" aria-label="Cart"><img class="nav-icons" src="images/cart.svg" alt=""></a>
+        <!-- Task 3: cart icon = badge + mini cart. Without JavaScript the link still goes to checkout.html -->
+        <div class="nav-cart">
+          <a href="checkout.html" class="cart-link" id="cart-toggle" aria-label="Cart, 0 items" aria-haspopup="true" aria-expanded="false" aria-controls="mini-cart">
+            <img class="nav-icons" src="images/cart.svg" alt="">
+            <span class="cart-badge" id="cart-badge" hidden>0</span>
+          </a>
+          <div class="mini-cart" id="mini-cart" hidden>
+            <h2 class="mini-cart-title">Your cart</h2>
+            <p class="mini-cart-empty" id="mini-cart-empty">Your cart is empty.</p>
+            <ul class="mini-cart-list" id="mini-cart-list"></ul>
+            <p class="mini-cart-total">Total: <strong id="mini-cart-total">£0.00</strong></p>
+            <a href="checkout.html" class="mini-cart-checkout">CHECKOUT</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -182,7 +195,7 @@
     <div class="col-5 col-md-4 col-lg-3">
       <div class="EQT-card">
         <img src="images/eqtshirt.webp" class="eqt-img">
-        <button class="add-eqt">+</button>
+        <button class="add-eqt" type="button">+</button>
         <p class="eqt-title">
           <a href="product.html" class="eqt-link">Arsenal adidas 26/27 EQT Shirt</a>
         </p>
@@ -193,7 +206,7 @@
     <div class="col-5 col-md-4 col-lg-3">
       <div class="EQT-card">
         <img src="images/eqttshirt.webp" class="eqt-img">
-        <button class="add-eqt">+</button>
+        <button class="add-eqt" type="button">+</button>
         <p class="eqt-title">Arsenal adidas 26/27 EQT T-Shirt</p>
         <p class="eqt-price">£45.00</p>
       </div>
@@ -202,7 +215,7 @@
     <div class="col-5 col-md-4 col-lg-3">
       <div class="EQT-card">
         <img src="images/eqtsweat.webp" class="eqt-img">
-        <button class="add-eqt">+</button>
+        <button class="add-eqt" type="button">+</button>
         <p class="eqt-title">Arsenal adidas 26/27 EQT Sweatshirt</p>
         <p class="eqt-price">£80.00</p>
       </div>
@@ -211,13 +224,13 @@
     <div class="col-5 col-md-4 col-lg-3">
       <div class="EQT-card">
         <img src="images/eqtziptop.webp" class="eqt-img">
-        <button class="add-eqt">+</button>
+        <button class="add-eqt" type="button">+</button>
         <p class="eqt-title">Arsenal adidas 26/27 EQT Half Zip Top</p>
         <p class="eqt-price">£85.00</p>
       </div>
     </div>
 
-
+  </div>
 </section>
 
     <div id="view-eqt-row">
@@ -391,6 +404,7 @@
   </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>

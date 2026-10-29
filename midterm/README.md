@@ -9,10 +9,11 @@
 
 ## Files changed
 
-- `index.html` – header/nav markup (Task 1), cart icon link (Task 2)
+- `index.html` – header/nav markup (Task 1), cart icon link (Task 2), cart badge + mini-cart markup and `<script>` link (Task 3)
 - `product.html` – header/nav markup (Task 1), cart icon link (Task 2)
-- `style.css` – header/nav rules + Task 1 section, Task 2 section at the end
+- `style.css` – header/nav rules + Task 1 section, Task 2 section, Task 3 section at the end
 - `checkout.html` – new (Task 2)
+- `script.js` – new (Task 3)
 
 ## Task 1 – Mega-menu
 
@@ -28,7 +29,9 @@ From 643px the fieldsets sit side by side and each `.fields` block is a CSS Grid
 
 ## Task 3 – Cart badge and mini cart
 
--
+Added `script.js` (plain JavaScript, loaded at the end of `index.html`). The cart is an array `cart` of `{ name, price }` objects; every "+" button on the product cards reads the name from `.eqt-title` and the price from `.eqt-price` of its own card (`closest()` + `querySelector()`), strips the `£` and converts it with `Number()`, then pushes it. A single `render()` function redraws everything from the array (badge, list, total, buttons), so adding and removing always stay in sync.
+The cart icon is now `<div class="nav-cart">` containing the link and the badge `<span>` plus a hidden `#mini-cart` panel. The click handler calls `preventDefault()` and toggles the panel's `hidden` attribute, so the first click opens it and the second closes it (Escape also closes it). Without JavaScript the icon still goes to `checkout.html`, and the panel has its own CHECKOUT link. Each row has a Remove button; one listener on the `<ul>` (event delegation) finds the clicked button, does `cart.splice(index, 1)` and calls `render()`. The total is `cart.reduce((sum, item) => sum + item.price, 0)`.
+Limit: `N mod 4 + 2 = 43 mod 4 + 2 = 5`, stored in `MAX_PER_PRODUCT`. `updateButtons()` counts how many copies of each card's product are in the cart; at 5 the button gets the text "Limit reached", `disabled = true` and the class `.is-limit`, and when one is removed the count drops, so the next `render()` turns it back into an enabled "+". In CSS the badge is `position: absolute` on the cart wrapper and the panel sits under the icon inside the header (z-index 2000), so it covers the page without pushing it down.
 
 ## AI tools used
 
