@@ -1,6 +1,6 @@
 # Midterm Lab – CSC336 Web Technologies
 
-**Name:** YOUR NAME
+**Name:** Ahmed Mohsin Nazir
 **Roll No:** FA24-BCS-143
 **N:** 43
 **BP:** 643px
